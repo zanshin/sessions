@@ -41,7 +41,6 @@ func main() {
 		}
 
 		fmt.Fprintln(writer, fmt.Sprintf("%s\t%s\t%s", host, blue, green))
-
 	}
 
 	// Flush the write to get our output
