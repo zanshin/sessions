@@ -15,9 +15,8 @@ func main() {
 		flag.PrintDefaults()
 	}
 
-	node := flag.String("n", "", "Name of service")
-	tier := flag.String("t", "p4", "Tier designation")
-	app := flag.Int("a", 4, "App node count, defaults to 4")
+	service := flag.String("s", "", "Name of service, including the tier")
+	inst := flag.Int("i", 4, "Instance count, number of app nodes, defaults to 4")
 	flag.Parse()
 
 	// Use tabwriter to control columns in output
@@ -25,8 +24,8 @@ func main() {
 
 	fmt.Fprintln(writer, "node\tblue\t   green")
 
-	for i := 1; i <= *app; i++ {
-		host := fmt.Sprintf("ome-%s-%s-app-0%d", *node, *tier, i)
+	for i := 1; i <= *inst; i++ {
+		host := fmt.Sprintf("ome-%s-app-0%d", *service, i)
 
 		blueCmd, greenCmd := buildCurl(host, i)
 		blue, err := runCurl(blueCmd)
