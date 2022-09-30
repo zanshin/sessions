@@ -9,11 +9,11 @@
 
 # But not these files...
 !/.gitignore
-!/.github
 
 !*.go
 !go.sum
 !go.mod
+!*.yaml
 
 !README.md
 !LICENSE
