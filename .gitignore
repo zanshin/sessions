@@ -16,6 +16,7 @@
 !*.yaml
 
 !README.md
+!RELEASE-TEMPLATE.md
 !LICENSE
 
 # !Makefile
